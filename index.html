@@ -185,16 +185,23 @@
     .profile-img {
       max-width: 100%; /* Ensure it doesn't overflow its container */
       height: auto; /* Maintain aspect ratio */
-      border-radius: 10px;
-      width: 100%; /* Default to full width of its column */
-      max-height: 70vh; /* Limit height on larger screens */
       object-fit: cover; /* Ensure image covers the area without distortion */
+    }
+
+    @media (max-width: 991.98px) { /* For mobile and tablet */
+      .profile-img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+      }
     }
 
     @media (min-width: 992px) { /* For large devices (desktops) */
       .profile-img {
-        width: 23vw; /* Original width for larger screens */
-        height: 70vh; /* Original height for larger screens */
+        width: 23vw;
+        height: 70vh;
+        border-radius: 10px;
       }
     }
 
@@ -285,17 +292,17 @@
 </nav>
 
 <!-- About Section -->
-<section id="about" class="about-section min-vh-100 d-flex align-items-center py-5" data-aos="fade-up">
-  <div class="container">
+<section id="about" class="about-section min-vh-100 d-flex align-items-center py-4 py-md-5" data-aos="fade-up">
+  <div class="container px-3 px-sm-4">
     <div class="row align-items-center gy-4">
-      <div class="col-lg-6 text-center text-lg-start order-lg-1 order-2"> <!-- Reordered for mobile-first content flow -->
-        <h1 class="display-6 typewriter">Hi, I'm <span class="text-primary">Jeshua James Baronia</span></h1>
+      <div class="col-lg-6 text-center text-lg-start order-lg-1 order-2 px-3 px-sm-4"> <!-- Reordered for mobile-first content flow -->
+        <h3 class="typewriter" style="font-size: 1.8rem; line-height: 1.3">Hi, I'm <span class="text-primary" style="font-size: 1.8rem; line-height: 1.3">Jeshua James Baronia</span></h3>
         <p class="lead mt-3">
           I'm a passionate IT graduate focused on web development, system administration, and solving real-world tech problems. Eager to grow in a collaborative and innovative environment.
         </p>
       </div>
-      <div class="col-lg-6 text-center order-lg-2 order-1 mb-4 mb-lg-0"> <!-- Image above text on small screens -->
-        <img src="profilepic.JPG" alt="Profile Picture" class="profile-img shadow-lg" />
+      <div class="col-lg-6 text-center order-lg-2 order-1 mt-4 mt-md-5 mb-4 mb-lg-0"> <!-- Image above text on small screens -->
+        <img src="profilepic.JPG" alt="Profile Picture" class="profile-img shadow-lg rounded-circle" style="max-width: 220px;" />
       </div>
     </div>
   </div>
