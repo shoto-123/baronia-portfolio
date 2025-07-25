@@ -167,19 +167,37 @@
       font-weight: 600;
     }
 
+    /* Responsive adjustments for carousel images */
     .carousel-inner img {
-      height: 70vh;
+      height: 70vh; /* Keep for larger screens */
       width: 100%;
       object-fit: cover;
       border-radius: 10px;
     }
 
-    .profile-img {
-      max-width: 100%;
-      border-radius: 10px;
-      width: 23vw;
-      height: 70vh;
+    @media (max-width: 767.98px) { /* For small devices (phones) */
+      .carousel-inner img {
+        height: 40vh; /* Adjust height for smaller screens */
+      }
     }
+
+    /* Responsive adjustments for profile image */
+    .profile-img {
+      max-width: 100%; /* Ensure it doesn't overflow its container */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px;
+      width: 100%; /* Default to full width of its column */
+      max-height: 70vh; /* Limit height on larger screens */
+      object-fit: cover; /* Ensure image covers the area without distortion */
+    }
+
+    @media (min-width: 992px) { /* For large devices (desktops) */
+      .profile-img {
+        width: 23vw; /* Original width for larger screens */
+        height: 70vh; /* Original height for larger screens */
+      }
+    }
+
 
     footer {
       background-color: var(--card-bg);
@@ -234,6 +252,13 @@
       transform: translateY(-5px);
       color: var(--link-hover);
     }
+
+    /* Responsive adjustments for section titles */
+    @media (max-width: 575.98px) { /* Extra small devices (phones) */
+      .section-title {
+        font-size: 2rem; /* Smaller font size for titles on phones */
+      }
+    }
   </style>
 </head>
 <body>
@@ -241,7 +266,7 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow">
   <div class="container-fluid px-4">
     <a class="nav-link" href="#">Baronia Portfolio</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
@@ -260,16 +285,16 @@
 </nav>
 
 <!-- About Section -->
-<section id="about" class="about-section min-vh-100 d-flex align-items-center" data-aos="fade-up">
+<section id="about" class="about-section min-vh-100 d-flex align-items-center py-5" data-aos="fade-up">
   <div class="container">
     <div class="row align-items-center gy-4">
-      <div class="col-lg-6 text-center text-lg-start">
+      <div class="col-lg-6 text-center text-lg-start order-lg-1 order-2"> <!-- Reordered for mobile-first content flow -->
         <h1 class="display-6 typewriter">Hi, I'm <span class="text-primary">Jeshua James Baronia</span></h1>
         <p class="lead mt-3">
           I'm a passionate IT graduate focused on web development, system administration, and solving real-world tech problems. Eager to grow in a collaborative and innovative environment.
         </p>
       </div>
-      <div class="col-lg-6 text-center">
+      <div class="col-lg-6 text-center order-lg-2 order-1 mb-4 mb-lg-0"> <!-- Image above text on small screens -->
         <img src="profilepic.JPG" alt="Profile Picture" class="profile-img shadow-lg" />
       </div>
     </div>
@@ -277,13 +302,13 @@
 </section>
 
 
-<section id="skills" class="min-vh-100 d-flex align-items-center">
+<section id="skills" class="min-vh-100 d-flex align-items-center py-5">
   <div class="container">
     <h2 class="section-title mb-5 text-center" data-aos="fade-up">Skills</h2>
     <div class="row justify-content-center">
 
       <!-- Programming (Left) -->
-      <div class="col-lg-4 mb-4" data-aos="fade-right">
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-right"> <!-- col-md-6 for tablets, col-lg-4 for desktops -->
         <div class="p-4 rounded shadow skill-table h-100">
           <h4 class="mb-4 text-center border-bottom pb-2">Programming</h4>
           <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" class="skill-icon" />Java</div>
@@ -295,7 +320,7 @@
       </div>
 
       <!-- Tools & Tech (Center) -->
-      <div class="col-lg-4 mb-4" data-aos="fade-up">
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up"> <!-- col-md-6 for tablets, col-lg-4 for desktops -->
         <div class="p-4 rounded shadow skill-table h-100">
           <h4 class="mb-4 text-center border-bottom pb-2">Tools & Tech</h4>
           <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="skill-icon" />GitHub</div>
@@ -308,12 +333,12 @@
       </div>
 
       <!-- Other (Right) -->
-      <div class="col-lg-4 mb-4" data-aos="fade-left">
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-left"> <!-- col-md-6 for tablets, col-lg-4 for desktops -->
         <div class="p-4 rounded shadow skill-table h-100">
           <h4 class="mb-4 text-center border-bottom pb-2">Other</h4>
           <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="skill-icon" />Figma</div>
           <div class="skill-item"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxo4K81Ei7WzcnqEk8W.MgwYqB5CRA8i20O0tGyRHzjcEesWcOw9C_zoFBtCCVzOdp5525q92eS773zOx_R7Bakc-&format=source" class="skill-icon" style="border-radius: 7px;"/>Canva</div>
-          <div class="skill-item"><img src="data:image/png;base64,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" class="skill-icon" style="border-radius: 7px;"/>Adobe Premiere</div>
+          <div class="skill-item"><img src="data:image/png;base64,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" class="skill-icon" style="border-radius: 7px;"/>Adobe Premiere</div>
           <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/3077/3077626.png" class="skill-icon" />Communication skill</div>
           <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" class="skill-icon" />Troubleshooting</div>
         </div>
@@ -324,12 +349,12 @@
 </section>
 
 
-<section id="projects" class="min-vh-100 d-flex align-items-center bg-dark bg-gradient text-white">
+<section id="projects" class="min-vh-100 d-flex align-items-center bg-dark bg-gradient text-white py-5">
   <div class="container">
     <h2 class="section-title mb-5 text-center">Capstone Project</h2>
     <div class="row align-items-center g-4">
       <!-- Carousel (Left) -->
-      <div class="col-lg-6">
+      <div class="col-lg-6 mb-4 mb-lg-0"> <!-- Add margin-bottom for stacking on smaller screens -->
         <div id="capstoneCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
             <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -426,12 +451,12 @@
 </section>
 
 
-<section id="experience" class="min-vh-100 d-flex align-items-center" data-aos="fade-left">
+<section id="experience" class="min-vh-100 d-flex align-items-center py-5" data-aos="fade-left">
   <div class="container">
     <h2 class="section-title mb-5 text-center">Experience</h2>
     <div class="row align-items-center g-4">
       <!-- Left Side -->
-      <div class="col-lg-6">
+      <div class="col-lg-6 order-lg-1 order-2"> <!-- Reordered for mobile-first content flow -->
         <h5><b>Creative Bananas</b> - Web/Graphics Designer Intern (Hybrid)</h5>
         <p>February 2025 – April 2025</p>
         <ul class="list-unstyled">
@@ -445,7 +470,7 @@
       </div>
 
       <!-- Right Side Carousel -->
-      <div class="col-lg-6">
+      <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0"> <!-- Image above text on small screens -->
         <div id="expCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-inner rounded shadow">
             <div class="carousel-item active">
@@ -466,7 +491,7 @@
 
 
 <!-- Contact -->
-<section id="contact" class="min-vh-100 d-flex align-items-center bg-dark text-light" data-aos="fade-up">
+<section id="contact" class="min-vh-100 d-flex align-items-center bg-dark text-light py-5" data-aos="fade-up">
   <div class="container text-center">
     <h2 class="section-title mb-4">Let's Connect</h2>
     <p class="mb-4">Feel free to reach out through my email, phone, or social platforms below.</p>
