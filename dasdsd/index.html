@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- AOS Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --card-bg: #1e1e1e;
+      --link-hover: #3798ff;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f2f2f2;
+      --text-color: #1a1a1a;
+      --card-bg: #ffffff;
+      --link-hover: #0d6efd;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid var(--text-color);
+      white-space: nowrap;
+      letter-spacing: 1px;
+      animation:
+        typing 3.5s steps(30, end),
+        blink-caret 0.75s step-end infinite;
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: var(--text-color); }
+    }
+
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    a {
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    section {
+      scroll-margin-top: 0px;
+    }
+
+    .navbar {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      margin: 15px auto;
+      width: 95%;
+      max-width: 1100px;
+      padding: 0.6rem 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: background-color 0.4s ease;
+    }
+
+    [data-theme="light"] .navbar {
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="light"] .navbar .nav-link {
+      color: #1a1a1a;
+    }
+
+    [data-theme="light"] .navbar .nav-link:hover {
+      color: #0d6efd;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .skill-icon {
+      width: 28px;
+      height: 28px;
+      margin-right: 12px;
+    }
+
+    .skill-table,
+    .project-card,
+    footer {
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .skill-item:last-child {
+      border-bottom: none;
+    }
+
+    .project-card {
+      border-radius: 10px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card h3,
+    .project-card p,
+    .project-card .badge,
+    footer p {
+      color: var(--text-color);
+    }
+
+    .project-card .badge {
+      background-color: #2d2d2d;
+      border: 1px solid #555;
+    }
+
+    [data-theme="light"] .project-card .badge {
+      background-color: #eaeaea;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+
+    .project-card .btn-outline-primary {
+      border-radius: 25px;
+      font-size: 0.85rem;
+      padding: 6px 20px;
+      font-weight: 600;
+    }
+
+    /* Responsive adjustments for carousel images */
+    .carousel-inner img, .carousel-inner video {
+      height: 70vh; /* Keep for larger screens */
+      width: 100%;
+      object-fit: contain; /* Changed from cover to contain */
+      border-radius: 10px;
+    }
+
+    @media (max-width: 767.98px) { /* For small devices (phones) */
+      .carousel-inner img, .carousel-inner video {
+        height: 40vh; /* Adjust height for smaller screens */
+      }
+    }
+
+    /* Specific adjustments for video-editing carousel videos */
+    #videoEditingCarousel .carousel-inner video {
+      height: 80vh; /* Increased height for portrait videos */
+      width: auto; /* Allow width to adjust based on height and aspect ratio */
+      max-width: 100%; /* Ensure it doesn't overflow */
+      object-fit: contain; /* Ensure aspect ratio is maintained */
+    }
+
+    @media (max-width: 767.98px) { /* For small devices (phones) */
+      #videoEditingCarousel .carousel-inner video {
+        height: 60vh; /* Adjust height for smaller screens */
+      }
+    }
+
+
+    /* Responsive adjustments for profile image */
+    .profile-img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 991.98px) { /* Mobile and tablet - circular */
+      .profile-img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @media (min-width: 992px) { /* Desktop - vertical rectangle */
+      .profile-img {
+        width: 300px;
+        height: 80%;
+        border-radius: 10px;
+      }
+    }
+
+
+    footer {
+      background-color: var(--card-bg);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    [data-theme="light"] footer p {
+      color: #555;
+    }
+
+    .form-switch .form-check-input {
+      cursor: pointer;
+    }
+
+    .about-section {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .about-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/bg-profile.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(7px);
+      transform: scale(1.1);
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .contact-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-icon i {
+      margin-bottom: 5px;
+    }
+
+    .contact-icon:hover {
+      transform: translateY(-5px);
+      color: var(--link-hover);
+    }
+
+    /* Video container styling */
+    .video-container {
+      position: relative;
+      padding-bottom: 20px;
+    }
+    
+    /* Volume controls */
+    .volume-control {
+      width: 50%;
+      margin: 10px auto 0;
+    }
+    .volume-slider {
+      width: 100%;
+      margin-top: 10px;
+      background: var(--link-hover);
+      height: 5px;
+      -webkit-appearance: none;
+    }
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--text-color);
+      cursor: pointer;
+    }
+
+    /* Responsive adjustments for section titles */
+    @media (max-width: 575.98px) { /* Extra small devices (phones) */
+      .section-title {
+        font-size: 2rem; /* Smaller font size for titles on phones */
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow">
+  <div class="container-fluid px-4">
+    <a class="nav-link" href="#">Baronia Portfolio</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <div class="form-check form-switch text-white">
+        <input class="form-check-input" type="checkbox" id="themeToggle" />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- About Section -->
+<section id="about" class="about-section min-vh-100 d-flex align-items-center py-4 py-md-5" data-aos="fade-up">
+  <div class="container px-3 px-sm-4">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-6 text-center text-lg-start order-lg-1 order-2 px-3 px-sm-4"> <!-- Reordered for mobile-first content flow -->
+        <h1 class="typewriter" style="font-size: 1.8rem; line-height: 1.3">Hi! I'm Jeshua James Baronia</h1>
+        <p class="lead mt-3">
+          I'm a passionate IT graduate focused on web development, system administration, and solving real-world tech problems. Eager to grow in a collaborative and innovative environment.
+        </p>
+      </div>
+      <div class="col-lg-6 text-center order-lg-2 order-1 mt-4 mt-md-5 mb-4 mb-lg-0"> <!-- Image above text on small screens -->
+        <img src="profilepic.JPG" alt="Profile Picture" class="profile-img shadow-lg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills" class="min-vh-100 d-flex align-items-center py-5">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center" data-aos="fade-up">Skills</h2>
+    <div class="row justify-content-center">
+
+      <!-- Programming (Left) -->
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-right"> <!-- col-md-6 for tablets, col-lg-4 for desktops -->
+        <div class="p-4 rounded shadow skill-table h-100">
+          <h4 class="mb-4 text-center border-bottom pb-2">Programming</h4>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" class="skill-icon" />Java</div>
+          <div class="skill-item"><img src="https://cdn.iconscout.com/icon/free/png-256/free-html-5-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-language-pack-logos-icons-1175208.png" class="skill-icon" />HTML</div>
+          <div class="skill-item"><img src="https://img.icons8.com/fluent/512/css3.png" class="skill-icon" />CSS</div>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/2772/2772128.png" class="skill-icon" />SQL</div>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" class="skill-icon" />C#</div>
+        </div>
+      </div>
+
+      <!-- Tools & Tech (Center) -->
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up"> <!-- col-md-6 for tablets, col-lg-4 for desktops -->
+        <div class="p-4 rounded shadow skill-table h-100">
+          <h4 class="mb-4 text-center border-bottom pb-2">Tools & Tech</h4>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="skill-icon" />GitHub</div>
+          <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519" class="skill-icon" />Visual Studio Code</div>
+          <div class="skill-item"><img src="https://images.icon-icons.com/1381/PNG/512/mysqlworkbench_93532.png" class="skill-icon" style="border-radius: 7px;"/>MySQL Workbench</div>
+          <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/XAMPP_Logo.png" class="skill-icon" />XAMPP</div>
+          <div class="skill-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMEpvhQOuCkjQFYaax3e8BMa9yk4Y6xt_HUQ&s" class="skill-icon" style="border-radius: 7px;" />Unity</div>
+          <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/TeamViewer_Logo_Icon_Only.svg/2048px-TeamViewer_Logo_Icon_Only.svg.png" class="skill-icon" />TeamViewer</div>
+        </div>
+      </div>
+
+      <!-- Other (Right) -->
+      <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-left"> <!-- col-md-6 for tablets, col-lg-4 for desktops -->
+        <div class="p-4 rounded shadow skill-table h-100">
+          <h4 class="mb-4 text-center border-bottom pb-2">Other</h4>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="skill-icon" />Figma</div>
+          <div class="skill-item"><img src="https://www.shutterstock.com/image-vector/capcut-logo-editorial-icon-isolated-600nw-2563301725.jpg" class="skill-icon" />Capcut</div>
+          <div class="skill-item"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxo4K81Ei7WzcnqEk8W.MgwYqB5CRA8i20O0tGyRHzjcEesWcOw9C_zoFBtCCVzOdp5525q92eS773zOx_R7Bakc-&format=source" class="skill-icon" style="border-radius: 7px;"/>Canva</div>
+          <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/500px-Adobe_Premiere_Pro_CC_icon.svg.png" class="skill-icon" style="border-radius: 7px;"/>Adobe Premiere</div>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/3077/3077626.png" class="skill-icon" />Communication skill</div>
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" class="skill-icon" />Troubleshooting</div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="projects" class="min-vh-100 d-flex align-items-center bg-dark bg-gradient text-white py-5">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center">Capstone Project</h2>
+    <div class="row align-items-center g-4">
+      <!-- Carousel (Left) -->
+      <div class="col-lg-6 mb-4 mb-lg-0"> <!-- Add margin-bottom for stacking on smaller screens -->
+        <div id="capstoneCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#capstoneCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+
+            <div class="carousel-inner rounded shadow">
+
+                <!-- Project 1: Video -->
+                <div class="carousel-item active">
+                    <div class="ratio ratio-16x9">
+                    <video class="d-block w-100" controls loop>
+                        <source src="/experience/capstone/capsproj1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+
+                <!-- Project 2: Video -->
+                <div class="carousel-item">
+                    <div class="ratio ratio-16x9">
+                    <video class="d-block w-100" autoplay loop>
+                        <source src="/experience/capstone/capsproj2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+
+                <!-- Project 3: Image -->
+                <div class="carousel-item">
+                    <img src="/experience/capstone/capsproj3.jpg" class="d-block w-100" alt="Project Image 3">
+                </div>
+
+                <!-- Project 4: Image -->
+                <div class="carousel-item">
+                    <img src="/experience/capstone/capsproj4.png" class="d-block w-100" alt="Project Image 4">
+                </div>
+
+                <!-- Project 5: Image -->
+                <div class="carousel-item">
+                    <img src="/experience/capstone/capsproj5.png" class="d-block w-100" alt="Project Image 4">
+                </div>
+
+                <!-- Project 6: Image -->
+                <div class="carousel-item">
+                    <img src="/experience/capstone/capsproj6.png" class="d-block w-100" alt="Project Image 4">
+                </div>
+        </div>
+
+          <!-- Arrows -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#capstoneCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#capstoneCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+<!-- Project Details (Right) -->
+<div class="col-lg-6">
+  <div class="project-card h-100">
+    <h3 class="mb-3">Mobile-Based Tile Visualizer App using AR</h3>
+
+    <p>
+      <span class="badge">Capstone | Feb – Nov 2024</span>
+      <span class="badge">University of Cabuyao</span>
+    </p>
+
+    <p class="mt-3">
+      A mobile AR app for Justin CJ Home Builders that lets users preview ceramic tiles in real-world rooms using Unity and ARCore.
+    </p>
+
+    <p>
+      The admin panel, built with React, Node.js, and MariaDB, allows easy tile data management. Enhances customer decisions with realistic previews.
+    </p>
+
+    <p class="mt-2">
+      <strong>Roles:</strong><br>
+      <span class="badge">Leader: Anenias Renniel</span>
+      <span class="badge">Frontend: Jeshua Baronia</span>
+      <span class="badge">Backend: Jhounelle Casitas</span>
+    </p>
+
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<section id="experience" class="min-vh-100 d-flex align-items-center py-5" data-aos="fade-left">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center">Experience</h2>
+    <div class="row align-items-center g-4">
+      <!-- Left Side -->
+      <div class="col-lg-6 order-lg-1 order-2"> <!-- Reordered for mobile-first content flow -->
+        <h5><b>Creative Bananas</b> - Web/Graphics Designer Intern (Hybrid)</h5>
+        <p>February 2025 – April 2025</p>
+        <ul class="list-unstyled">
+          <li>✔ Designed web pages and social media graphics</li>
+          <li>✔ Created wireframes and UI mockups using Figma</li>
+          <li>✔ Collaboration with final project of intern</li>
+          <li>✔ Helped optimize images and assets for performance</li>
+          <li>✔ Create video commericial a reels for branding and products</li>
+          <li>✔ Conducted quality assurance reviews in intern final project</li>
+        </ul>
+      </div>
+
+      <!-- Right Side Carousel -->
+      <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0"> <!-- Image above text on small screens -->
+        <div id="expCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+              <img src="/experience/internship/intern1.jpg" class="d-block w-100" alt="Experience Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="/experience/internship/intern2.jpg" class="d-block w-100" alt="Experience Image 2">
+            </div>
+            <div class="carousel-item">
+              <img src="/experience/internship/intern3.jpg" class="d-block w-100" alt="Experience Image 3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- New Section: Video Editing -->
+<section id="video-editing" class="min-vh-100 d-flex align-items-center py-5" data-aos="fade-left">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 order-lg-1 order-2">
+        <h5><b>Freelance Video Editor (Commission-Based)</b></h5>
+        <h6><i>Subcontracted through Peer Collaborations</i></h6>
+        <p>May 2025 – July 2025</p>
+        <ul class="list-unstyled">
+          <li>✔ Produced engaging video content for various clients, including promotional videos, short films, and social media clips.</li>
+          <li>✔ Proficient in Capcut Pro and Adobe Premiere Pro for editing, color grading, and audio mixing.</li>
+          <li>✔ Managed video projects from conception to final delivery, ensuring timely completion and client satisfaction.</li>
+          <li>✔ Utilized motion graphics and visual effects to enhance video appeal.</li>
+        </ul>
+        <a href="https://drive.google.com/drive/folders/13XS_zLa0xwG2jIMqPhvY_i-cvaDsGTvB?usp=drive_link" target="_blank" class="btn btn-primary w-100">View All Video Projects</a>
+      </div>
+      <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
+        <div class="video-container rounded shadow mx-auto" style="max-width: 400px;">
+          <video class="w-100 rounded" controls loop>
+            <source src="/experience/videoediting/videoedit5.mp4" type="video/mp4">
+          </video>
+          <div class="text-center mt-3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="min-vh-100 d-flex align-items-center bg-dark text-light py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="section-title mb-4">Let's Connect</h2>
+    <p class="mb-4">Feel free to reach out through my email, phone, or social platforms below.</p>
+
+    <div class="mb-4">
+      <p class="mb-2 fs-5"><strong>Email:</strong> baroniajeshuajames@gmail.com</p>
+      <p class="fs-5"><strong>Phone:</strong> +639760305334 / +639471000917</p>
+    </div>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap">
+      <a href="https://www.linkedin.com/in/jeshua-james-baronia-96b691345/" target="_blank" class="contact-icon text-decoration-none text-light">
+        <i class="bi bi-linkedin fs-2"></i>
+        <div class="mt-1">LinkedIn</div>
+      </a>
+      <a href="https://www.facebook.com/jeshua.baronia" target="_blank" class="contact-icon text-decoration-none text-light">
+        <i class="bi bi-facebook fs-2"></i>
+        <div class="mt-1">Facebook</div>
+      </a>
+      <a href="https://www.instagram.com/07_jesh/" target="_blank" class="contact-icon text-decoration-none text-light">
+        <i class="bi bi-instagram fs-2"></i>
+        <div class="mt-1">Instagram</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Jeshua Baronia. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1500,
+    once: true
+  });
+
+  const toggle = document.getElementById("themeToggle");
+  toggle.addEventListener("change", () => {
+    const html = document.documentElement;
+    const isDark = html.getAttribute("data-theme") === "dark";
+    html.setAttribute("data-theme", isDark ? "light" : "dark");
+  });
+
+  // Initialize main carousels (excluding video editing)
+  document.querySelectorAll('.carousel:not(#videoEditingCarousel)').forEach(carousel => {
+    new bootstrap.Carousel(carousel, {
+      interval: 3000,
+      ride: 'carousel'
+    });
+  });
+
+  // Pause videos when not active in carousel, play when active
+  document.querySelectorAll('.carousel').forEach(carouselElement => {
+    carouselElement.addEventListener('slide.bs.carousel', function (event) {
+      // Pause all videos in the current carousel
+      this.querySelectorAll('video').forEach(video => {
+        video.pause();
+      });
+
+      // Play the video in the new active item
+      const activeItem = event.relatedTarget;
+      const activeVideo = activeItem.querySelector('video');
+      if (activeVideo) {
+        activeVideo.play();
+      }
+    });
+
+    // Ensure videos play when the page loads if they are the active item
+    const initialActiveVideo = carouselElement.querySelector('.carousel-item.active video');
+    if (initialActiveVideo) {
+      initialActiveVideo.play();
+    }
+  });
+</script>
+
+</body>
+</html>
