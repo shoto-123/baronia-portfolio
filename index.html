@@ -199,29 +199,38 @@
         }
       }
 
+      video {
+  playsinline: true;
+  -webkit-playsinline: true; /* for iPhones */
+}
 
-      /* Responsive adjustments for profile image */
-      .profile-img {
-        max-width: 100%;
-        border-radius: 10px;
-      }
 
-      @media (max-width: 991.98px) { /* Mobile and tablet - circular */
-        .profile-img {
-          width: 220px;
-          height: 220px;
-          border-radius: 50%;
-          margin-bottom: 1.5rem;
-        }
-      }
 
-      @media (min-width: 992px) { /* Desktop - vertical rectangle */
-        .profile-img {
-          width: 300px;
-          height: 80%;
-          border-radius: 10px;
-        }
-      }
+.profile-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+  .profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
 
 
       footer {
@@ -425,7 +434,7 @@
                   <!-- Project 1: Video -->
                   <div class="carousel-item active">
                       <div class="ratio ratio-16x9">
-                      <video class="d-block w-100" controls loop>
+                      <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
                           <source src="./experience/capstone/capsproj1.mp4" type="video/mp4">
                           Your browser does not support the video tag.
                       </video>
@@ -435,7 +444,7 @@
                   <!-- Project 2: Video -->
                   <div class="carousel-item">
                       <div class="ratio ratio-16x9">
-                      <video class="d-block w-100" autoplay loop>
+                      <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
                           <source src="./experience/capstone/capsproj2.mp4" type="video/mp4">
                           Your browser does not support the video tag.
                       </video>
@@ -577,35 +586,35 @@
 
             <!-- Video 1 -->
             <div class="carousel-item active">
-              <video class="w-100 rounded" muted loop preload="metadata">
+              <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
                 <source src="./experience/videoediting/videoedit1.mp4" type="video/mp4">
               </video>
             </div>
 
             <!-- Video 2 -->
             <div class="carousel-item">
-              <video class="w-100 rounded" muted loop preload="metadata">
+              <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
                 <source src="./experience/videoediting/videoedit2.mp4" type="video/mp4">
               </video>
             </div>
 
             <!-- Video 3 -->
             <div class="carousel-item">
-              <video class="w-100 rounded" muted loop preload="metadata">
+              <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
                 <source src="./experience/videoediting/videoedit3.mp4" type="video/mp4">
               </video>
             </div>
 
             <!-- Video 4 -->
             <div class="carousel-item">
-              <video class="w-100 rounded" muted loop preload="metadata">
+              <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline></video>
                 <source src="./experience/videoediting/videoedit4.mp4" type="video/mp4">
               </video>
             </div>
 
             <!-- Video 5 -->
             <div class="carousel-item">
-              <video class="w-100 rounded" muted loop preload="metadata">
+              <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
                 <source src="./experience/videoediting/videoedit5.mp4" type="video/mp4">
               </video>
             </div>
@@ -647,7 +656,7 @@
           brand showcase videos that were published across digital platforms.
         </p>
 
-        <video class="w-100 rounded shadow" controls loop preload="metadata">
+        <video class="w-100 rounded" muted loop preload="metadata" playsinline webkit-playsinline>
           <source src="/experience/internship/internedit-sample.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
