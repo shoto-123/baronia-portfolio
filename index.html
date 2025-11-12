@@ -173,6 +173,38 @@
   filter: brightness(1.2);
 }
 
+/* Internship section video styles */
+#internship video {
+  border-radius: 15px;
+  background-color: #000;
+  object-fit: cover;
+}
+
+/* Portrait videos (vertical layout) */
+.portrait-video video {
+  aspect-ratio: 9 / 16;
+}
+
+/* Square video (1x1 ratio) */
+.square-video video {
+  aspect-ratio: 1 / 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  #internship .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  #internship .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
 #internship .portrait-video video {
   border-radius: 15px;
   margin-bottom: 1rem;
@@ -416,11 +448,11 @@ html {
 
 <section id="internship" class="text-center">
   <div class="container">
-    <h2 data-aos="fade-up">Internship Project</h2>
-    <div class="row align-items-center mt-5">
+    <h2 data-aos="fade-up">Ads / Ecommerce Project</h2>
+    <div class="row align-items-center mt-5 g-4">
       
       <!-- Video 1 -->
-      <div class="col-md-4" data-aos="fade-right">
+      <div class="col-md-3" data-aos="fade-right">
         <div class="portrait-video mb-3">
           <video width="100%" controls>
             <source src="vele-productshowcase.mp4" type="video/mp4">
@@ -430,7 +462,7 @@ html {
       </div>
 
       <!-- Video 2 -->
-      <div class="col-md-4" data-aos="fade-up">
+      <div class="col-md-3" data-aos="fade-up">
         <div class="portrait-video mb-3">
           <video width="100%" controls>
             <source src="vele-care.mp4" type="video/mp4">
@@ -439,18 +471,29 @@ html {
         </div>
       </div>
 
+      <!-- Video 3 (1x1 ratio) -->
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="square-video mb-3">
+          <video width="100%" controls>
+            <source src="Task 3 - Editing Promo Video (1x1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
       <!-- Captions / Description -->
-      <div class="col-md-4 text-start" data-aos="fade-left">
+      <div class="col-md-3 text-start d-flex flex-column justify-content-center" data-aos="fade-left">
         <h3>Promotional Video Editing</h3>
         <p>
-          During my internship, I edited multiple portrait promotional videos for a corporate client, focusing on cinematic storytelling, smooth transitions, and color grading. These videos helped increase engagement and product visibility on social media platforms.
+          During my internship, I edited multiple portrait and square promotional videos, focusing on storytelling, smooth transitions, and color grading. These helped boost engagement and visibility across social media platforms.
         </p>
-        <p><strong>Tools Used:</strong> Adobe Premiere Pro, After Effects, CapCut</p>
+        <p><strong>Tools Used:</strong> Adobe Premiere Pro, After Effects, CapCut, Canva</p>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 
