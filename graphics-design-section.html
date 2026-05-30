@@ -1,0 +1,278 @@
+
+<section id="graphics">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Visual Design</span>
+      <h2>Graphics Design</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Tab Switcher -->
+    <div class="gd-tabs" data-aos="fade-up" data-aos-delay="100">
+      <button class="gd-tab active" onclick="switchGDTab('banners', this)">
+        <i class="bi bi-images"></i> My Banners
+      </button>
+      <button class="gd-tab" onclick="switchGDTab('inspired', this)">
+        <i class="bi bi-stars"></i> CapCut Inspired
+      </button>
+    </div>
+
+    <!-- ── Panel 1: My Banners ── -->
+    <div id="gd-banners" class="gd-panel active" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="banners-grid">
+
+        <!-- Banner 1 — replace src with your actual file -->
+        <div class="banner-card" onclick="openLightbox('./graphics/banner1.jpg', 'Social Media Banner — Brand Awareness')">
+          <img src="./graphics/banner1.jpg" alt="Banner 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="banner-placeholder" style="display:none">
+            <i class="bi bi-image"></i>
+            <span>banner1.jpg</span>
+          </div>
+          <div class="banner-overlay">
+            <div class="banner-overlay-text">
+              <h5>Social Media Banner</h5>
+              <p>Brand Awareness Campaign</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner 2 -->
+        <div class="banner-card portrait" onclick="openLightbox('./graphics/banner2.jpg', 'Portrait Story Banner')">
+          <img src="./graphics/banner2.jpg" alt="Banner 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="banner-placeholder" style="display:none">
+            <i class="bi bi-image"></i>
+            <span>banner2.jpg</span>
+          </div>
+          <div class="banner-overlay">
+            <div class="banner-overlay-text">
+              <h5>Story Banner</h5>
+              <p>9:16 Portrait Format</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner 3 -->
+        <div class="banner-card square" onclick="openLightbox('./graphics/banner3.jpg', 'Square Promo Banner')">
+          <img src="./graphics/banner3.jpg" alt="Banner 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="banner-placeholder" style="display:none">
+            <i class="bi bi-image"></i>
+            <span>banner3.jpg</span>
+          </div>
+          <div class="banner-overlay">
+            <div class="banner-overlay-text">
+              <h5>Promo Banner</h5>
+              <p>Square Format — Feed Ad</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner 4 -->
+        <div class="banner-card" onclick="openLightbox('./graphics/banner4.jpg', 'Event Banner')">
+          <img src="./graphics/banner4.jpg" alt="Banner 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="banner-placeholder" style="display:none">
+            <i class="bi bi-image"></i>
+            <span>banner4.jpg</span>
+          </div>
+          <div class="banner-overlay">
+            <div class="banner-overlay-text">
+              <h5>Event Banner</h5>
+              <p>Typography-Forward Design</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner 5 -->
+        <div class="banner-card square" onclick="openLightbox('./graphics/banner5.jpg', 'Product Highlight Banner')">
+          <img src="./graphics/banner5.jpg" alt="Banner 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="banner-placeholder" style="display:none">
+            <i class="bi bi-image"></i>
+            <span>banner5.jpg</span>
+          </div>
+          <div class="banner-overlay">
+            <div class="banner-overlay-text">
+              <h5>Product Highlight</h5>
+              <p>Clean Minimal Composition</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner 6 -->
+        <div class="banner-card" onclick="openLightbox('./graphics/banner6.jpg', 'Campaign Banner')">
+          <img src="./graphics/banner6.jpg" alt="Banner 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="banner-placeholder" style="display:none">
+            <i class="bi bi-image"></i>
+            <span>banner6.jpg</span>
+          </div>
+          <div class="banner-overlay">
+            <div class="banner-overlay-text">
+              <h5>Campaign Banner</h5>
+              <p>Bold Color & Contrast</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /banners-grid -->
+
+      <div class="gd-desc">
+        <h3>Banner Design Work</h3>
+        <p>A collection of social media banners and promotional graphics crafted for various brands and campaigns. Each piece balances strong visual hierarchy, brand consistency, and platform-specific formatting.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Canva</span>
+          <span class="tool-tag">CapCut</span>
+          <span class="tool-tag">Adobe Photoshop</span>
+        </div>
+      </div>
+
+    </div><!-- /panel banners -->
+
+    <!-- ── Panel 2: CapCut Inspired ── -->
+    <div id="gd-inspired" class="gd-panel" data-aos="fade-up">
+
+      <div class="capcut-intro">
+        <div class="capcut-badge">
+          <i class="bi bi-magic"></i>
+          CapCut Inspired Designs
+        </div>
+      </div>
+
+      <div class="inspired-grid">
+
+        <!-- Inspired Card 1 -->
+        <div class="inspired-card" onclick="openLightbox('./graphics/capcut1.jpg', 'CapCut Inspired — Cinematic Text Overlay')">
+          <img src="./graphics/capcut1.jpg" alt="CapCut Inspired 1" onerror="this.parentElement.querySelector('.cc-fallback').style.display='flex'; this.style.display='none'">
+          <div class="cc-fallback banner-placeholder" style="display:none; height:200px">
+            <i class="bi bi-image"></i><span>capcut1.jpg</span>
+          </div>
+          <div class="inspired-card-footer">
+            <h5>Cinematic Text Overlay</h5>
+            <p>Bold title treatment with motion-blur inspired static effect</p>
+            <span class="cc-tag">CapCut Style</span>
+          </div>
+        </div>
+
+        <!-- Inspired Card 2 (taller) -->
+        <div class="inspired-card" onclick="openLightbox('./graphics/capcut2.jpg', 'CapCut Inspired — Neon Glow Aesthetic')">
+          <img src="./graphics/capcut2.jpg" alt="CapCut Inspired 2" onerror="this.parentElement.querySelector('.cc-fallback').style.display='flex'; this.style.display='none'">
+          <div class="cc-fallback banner-placeholder" style="display:none; height:260px">
+            <i class="bi bi-image"></i><span>capcut2.jpg</span>
+          </div>
+          <div class="inspired-card-footer">
+            <h5>Neon Glow Aesthetic</h5>
+            <p>Vibrant color grading with glowing text — signature CapCut look</p>
+            <span class="cc-tag">CapCut Style</span>
+          </div>
+        </div>
+
+        <!-- Inspired Card 3 -->
+        <div class="inspired-card" onclick="openLightbox('./graphics/capcut3.jpg', 'CapCut Inspired — Gradient Title Card')">
+          <img src="./graphics/capcut3.jpg" alt="CapCut Inspired 3" onerror="this.parentElement.querySelector('.cc-fallback').style.display='flex'; this.style.display='none'">
+          <div class="cc-fallback banner-placeholder" style="display:none; height:180px">
+            <i class="bi bi-image"></i><span>capcut3.jpg</span>
+          </div>
+          <div class="inspired-card-footer">
+            <h5>Gradient Title Card</h5>
+            <p>Soft gradient mesh background with bold typographic layout</p>
+            <span class="cc-tag">CapCut Style</span>
+          </div>
+        </div>
+
+        <!-- Inspired Card 4 -->
+        <div class="inspired-card" onclick="openLightbox('./graphics/capcut4.jpg', 'CapCut Inspired — Dark Moody Thumbnail')">
+          <img src="./graphics/capcut4.jpg" alt="CapCut Inspired 4" onerror="this.parentElement.querySelector('.cc-fallback').style.display='flex'; this.style.display='none'">
+          <div class="cc-fallback banner-placeholder" style="display:none; height:220px">
+            <i class="bi bi-image"></i><span>capcut4.jpg</span>
+          </div>
+          <div class="inspired-card-footer">
+            <h5>Dark Moody Thumbnail</h5>
+            <p>High-contrast moodboard style with dramatic shadowing</p>
+            <span class="cc-tag">CapCut Style</span>
+          </div>
+        </div>
+
+        <!-- Inspired Card 5 -->
+        <div class="inspired-card" onclick="openLightbox('./graphics/capcut5.jpg', 'CapCut Inspired — Retro VHS Frame')">
+          <img src="./graphics/capcut5.jpg" alt="CapCut Inspired 5" onerror="this.parentElement.querySelector('.cc-fallback').style.display='flex'; this.style.display='none'">
+          <div class="cc-fallback banner-placeholder" style="display:none; height:240px">
+            <i class="bi bi-image"></i><span>capcut5.jpg</span>
+          </div>
+          <div class="inspired-card-footer">
+            <h5>Retro VHS Frame</h5>
+            <p>Nostalgic grain texture with scanline overlay — retro aesthetic</p>
+            <span class="cc-tag">CapCut Style</span>
+          </div>
+        </div>
+
+        <!-- Inspired Card 6 -->
+        <div class="inspired-card" onclick="openLightbox('./graphics/capcut6.jpg', 'CapCut Inspired — Minimalist Product Frame')">
+          <img src="./graphics/capcut6.jpg" alt="CapCut Inspired 6" onerror="this.parentElement.querySelector('.cc-fallback').style.display='flex'; this.style.display='none'">
+          <div class="cc-fallback banner-placeholder" style="display:none; height:200px">
+            <i class="bi bi-image"></i><span>capcut6.jpg</span>
+          </div>
+          <div class="inspired-card-footer">
+            <h5>Minimalist Product Frame</h5>
+            <p>Clean white-space composition with subtle accent lines</p>
+            <span class="cc-tag">CapCut Style</span>
+          </div>
+        </div>
+
+      </div><!-- /inspired-grid -->
+
+      <div class="gd-desc">
+        <h3>CapCut-Inspired Visuals</h3>
+        <p>These designs draw inspiration from CapCut's signature aesthetics — from neon glow text overlays to cinematic color grades and retro filter styles — adapted into static graphic formats for banners and thumbnails.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">CapCut</span>
+          <span class="tool-tag">Canva</span>
+          <span class="tool-tag">Photoshop</span>
+        </div>
+      </div>
+
+    </div><!-- /panel inspired -->
+
+  </div><!-- /container -->
+</section>
+
+<!-- ── Lightbox Overlay (add once, anywhere before </body>) ── -->
+<div class="gd-lightbox" id="gdLightbox" onclick="closeLightbox(event)">
+  <button class="gd-lightbox-close" onclick="closeLightboxDirect()">
+    <i class="bi bi-x-lg"></i>
+  </button>
+  <img src="" alt="" id="gdLightboxImg">
+  <div class="gd-lightbox-caption" id="gdLightboxCaption"></div>
+</div>
+
+<!-- ── Tab + Lightbox JS (add before your closing </script> or as a new <script> block) ── -->
+<script>
+  /* Graphics Design Tabs */
+  function switchGDTab(panel, btn) {
+    document.querySelectorAll('.gd-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.gd-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('gd-' + panel).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* Lightbox */
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('gdLightbox');
+    document.getElementById('gdLightboxImg').src = src;
+    document.getElementById('gdLightboxCaption').textContent = caption;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightboxDirect() {
+    document.getElementById('gdLightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightbox(e) {
+    if (e.target === document.getElementById('gdLightbox')) closeLightboxDirect();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightboxDirect();
+  });
+</script>
